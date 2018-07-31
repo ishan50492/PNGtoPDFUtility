@@ -17,16 +17,8 @@ def makePdf(pdfFileName, listPages, dir = ''):
 
     pdf.output(dir + pdfFileName + ".pdf", "F")
 
-#Read PNG image screenshot
-filelist=os.listdir(os.getcwd())
+#Give pages where the pages are in .PNG format
+listPages=['page1','page2']
 
-listPages=[]
-for file in filelist:
-
-    if file.endswith('.png'):
-        listPages.append(file.rstrip('.png'))
-
-print(listPages)
-
-listPages=['Quality Inn Santa Clara Convention Center']
-makePdf('Quality Inn Santa Clara Convention Center',listPages)
+#Give the target filename which will be the filename of the final PDF, eg outputfile.pdf
+makePdf('outputfile',listPages)
